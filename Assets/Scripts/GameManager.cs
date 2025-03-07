@@ -6,9 +6,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    public GameObject AIEnemy;
     public GameObject PlayerControllerPrefab;
     public GameObject TankPawnPrefab;
+    public Camera Camera;
+    public Transform CamAnchor;
+    public Transform tankPawnSpawner;
+    public AIController Controller;
+    public List<PlayerControler> players;
 
     // Start is called before the first frame update
     private void Awake()
@@ -22,22 +27,29 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        players = new List<PlayerControler>();
+        
     }
 
     public void Start()
     {
         SpawnPlayer();
     }
+
     public void SpawnPlayer()
     {
         GameObject playerObj = Instantiate(PlayerControllerPrefab, Vector3.zero, Quaternion.identity);
-        GameObject pawnObj = Instantiate(TankPawnPrefab, Vector3.zero, Quaternion.identity);
-
+        GameObject pawnObj = Instantiate(TankPawnPrefab, tankPawnSpawner.position, Quaternion.identity);
+        AIController controller = Controller;
+        Camera camera = Camera.main;
+        CameraController cameraController = camera.GetComponent<CameraController>();
         Controller playerController = playerObj.GetComponent<Controller>();
         Pawn tankPawn = pawnObj.GetComponent<Pawn>();
-
-        playerController.Pawn = tankPawn;
-
+        cameraController.pawn = tankPawn;
+        cameraController.pawn.CamAnchor = tankPawn.CamAnchor;
+        playerController.pawn = tankPawn;
+    
+        
     }
 
 
