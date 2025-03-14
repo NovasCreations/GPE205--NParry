@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.IO.LowLevel.Unsafe;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,8 +19,12 @@ public class AIController : Controller
     public Transform[] waypoints;
     public float waypointStopDistance;
     private int currentWaypoint = 0;
-
+    // hearing variable
+    public float hearingDistance;
+    //vision variables
+    public float FieldOfView;
     //public float fleeVector;
+    public Transform firePointTransform;
 
     // Start is called before the first frame update
     public override void Start()
@@ -50,7 +55,7 @@ public class AIController : Controller
         {
             case AIState.Gaurd:
                 // any work that happens for our gaurd
-                if (isDistanceLessThan(target, triggerDistance))
+                if (CanSee(target))
                 {
                     ChangeState(AIState.Chase);
                 }
@@ -58,7 +63,7 @@ public class AIController : Controller
             case AIState.Chase:
                 //any work for chase
                 doChaseState();
-                if (!isDistanceLessThan(target, triggerDistance))
+                if (!CanSee(target))
                 {
                     ChangeState(AIState.Gaurd);
                 }
@@ -206,11 +211,59 @@ public class AIController : Controller
                 if (GameManager.Instance.players.Count > 0)
                 {
                     target = GameManager.Instance.players[0].pawn.gameObject;
+                    Debug.Log(target);
                 }
             }
         }
-    } 
+    }
     protected bool isHasTarget()
-        { return target != null; }
+    { return target != null; }
+
+    public bool CanHear(GameObject target)
+    {
+        Noisemaker noisemaker = target.GetComponent<Noisemaker>();
+        if (noisemaker == null)
+        {
+            return false;
+        }
+        if (noisemaker.volumeDistance <= 0)
+        {
+            return false;
+        }
+
+        float totalDistance = noisemaker.volumeDistance + hearingDistance;
+        if (Vector3.Distance(pawn.transform.position, target.transform.position) <= totalDistance)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    public bool CanSee(GameObject target)
+    {
+        Vector3 targetVector = target.transform.position - pawn.transform.position;
+
+        float targetAngle = Vector3.Angle(targetVector, pawn.transform.forward);
+
+        if (targetAngle < FieldOfView)
+        {
+            Debug.Log("Target = " + target + "Field Of View = " + FieldOfView + "Angle = " + targetAngle +"vector = " + targetVector );
+            RaycastHit hit;
+            Vector3 rayStart = firePointTransform.position;
+            Debug.DrawRay(rayStart, pawn.transform.forward * FieldOfView, Color.red);
+            if (Physics.Raycast(rayStart, pawn.transform.forward, out hit))
+            {
+                
+                if (hit.transform.gameObject == target)
+                {
+                    Debug.Log("can see" + target);
+                    return true;
+                }
+            } 
+        }
+        Debug.Log("cant see" + target);
+        return false;
+    }
 }
+
 

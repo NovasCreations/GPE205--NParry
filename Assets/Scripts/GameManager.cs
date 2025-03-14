@@ -45,13 +45,19 @@ public class GameManager : MonoBehaviour
         CameraController cameraController = camera.GetComponent<CameraController>();
         Controller playerController = playerObj.GetComponent<Controller>();
         Pawn tankPawn = pawnObj.GetComponent<Pawn>();
-        cameraController.pawn = tankPawn;
-        cameraController.pawn.CamAnchor = tankPawn.CamAnchor;
+        if (cameraController == null || cameraController.targetPlayer == null)
+            {
+            cameraController.targetPlayer = pawnObj;
+            cameraController.pawn = tankPawn;
+            cameraController.pawn.CamAnchor = tankPawn.CamAnchor;
+        }
+        else
+            {
+                Debug.Log(cameraController.targetPlayer);
+            }
+
         playerController.pawn = tankPawn;
-    
+        controller.target = pawnObj;
         
     }
-
-
-
 }

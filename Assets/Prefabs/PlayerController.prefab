@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b351febf33be749926b3d7a96fd0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pawn: {fileID: 0}
+  pawn: {fileID: 0}
   moveForwardKey: 119
   moveBackwardKey: 115
   rotateClockwise: 100
   rotateCounterClockwise: 97
   shootkey: 32
+  volumeDistance: 5

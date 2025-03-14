@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     // Reference to the player GameObject.
+    public GameObject targetPlayer;
     public Pawn pawn;
 
     // The distance between the camera and the player.
@@ -19,7 +20,9 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update.
     void Start()
     {
+        pawn = targetPlayer.GetComponent<Pawn>();
         rotationAngles = pawn.mover.GetComponent<Vector3>();
+
         if (pawn.CamAnchor != null)
         {
             // Calculate the initial offset between the camera's position and the player's position.
