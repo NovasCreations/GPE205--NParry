@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2457517313238711982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7180880006004167849}
+  - component: {fileID: 4047771590728075573}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7180880006004167849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2457517313238711982}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.152205, y: 4.8030653, z: 4.0815053}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4047771590728075573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2457517313238711982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 925cde2a8b606724487cb2363b4c4e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AIEnemy: {fileID: 864928056514346496, guid: 90e82284741e71c479fc80d3a1871901, type: 3}
+  PlayerControllerPrefab: {fileID: 7353906114118907334, guid: b9680fa23c60ebf478ad3e0dec7c89f5, type: 3}
+  TankPawnPrefab: {fileID: 2675900703322249293, guid: 6dc343b3f87601145a5b2a804b663f4a, type: 3}
+  Camera: {fileID: 0}
+  CamAnchor: {fileID: 0}
+  tankPawnSpawner: {fileID: 0}
+  AIControllers:
+  - {fileID: 1067258821371451169, guid: c34fa00b0db1d1b4f8cbe58dca0b130d, type: 3}
+  - {fileID: 4962183662796459120, guid: 2cd6c24d69a386b45a702d91e3f4a743, type: 3}
+  - {fileID: 3858397150231216959, guid: 4e3dd2f1ba8c25d4297932c07d876e47, type: 3}
+  - {fileID: 7269691465310232643, guid: 47c3f8de81145584f8aca98689d06b7a, type: 3}
+  AISpawns:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  players: []
+  Controllers: []
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  attacker: {fileID: 0}

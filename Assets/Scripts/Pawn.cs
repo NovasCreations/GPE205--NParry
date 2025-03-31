@@ -22,6 +22,7 @@ public abstract class Pawn : MonoBehaviour
     // variable for rate of fire
     public float fireRate;
     public Transform CamAnchor;
+    //public Transform FirePointTransform;
 
     public Shooter shooter;
     
@@ -35,6 +36,7 @@ public abstract class Pawn : MonoBehaviour
         shooter = GetComponent<Shooter>();
 
         noisemaker = GetComponent<Noisemaker>();
+        
     }
 
     // Update is called once per frame

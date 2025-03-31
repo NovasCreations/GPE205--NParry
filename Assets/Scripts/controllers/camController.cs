@@ -20,19 +20,19 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update.
     void Start()
     {
-        pawn = targetPlayer.GetComponent<Pawn>();
-        rotationAngles = pawn.mover.GetComponent<Vector3>();
+        ////pawn = targetPlayer.GetComponent<Pawn>();
+        ////rotationAngles = pawn.mover.GetComponent<Vector3>();
 
-        if (pawn.CamAnchor != null)
-        {
-            // Calculate the initial offset between the camera's position and the player's position.
-            offset = transform.position - pawn.CamAnchor.position;
-            //transform.rotation = Quaternion.Euler(rotationAngles);
-        }
-        else
-        {
-            Debug.LogError("cam anchor not assaigned");
-        }
+        //if (pawn.CamAnchor != null)
+        //{
+        //    // Calculate the initial offset between the camera's position and the player's position.
+        //    offset = transform.position - pawn.CamAnchor.position;
+        //    //transform.rotation = Quaternion.Euler(rotationAngles);
+        //}
+        //else
+        //{
+        //    Debug.LogError("cam anchor not assaigned");
+        //}
     }
 
     // LateUpdate is called once per frame after all Update functions have been completed.

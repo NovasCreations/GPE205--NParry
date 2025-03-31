@@ -12,7 +12,7 @@ public class TankPawn : Pawn
     // Start is called before the first frame update
     public override void Start()
     {
-        secondsPerShot = 1/fireRate;
+        
 
         nextShootTime =  Time.time + secondsPerShot;
         base.Start();
@@ -58,10 +58,12 @@ public class TankPawn : Pawn
 
     public override void Shoot()
     {
+        secondsPerShot = 1 / fireRate;
         if (Time.time >= nextShootTime)
         {
-           shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
-            nextShootTime = Time.time +secondsPerShot;
+
+            shooter.Shoot(shellPrefab, fireForce, damageDone, shellLifespan);
+            nextShootTime = Time.time + secondsPerShot;
         }
     }
 

@@ -47,6 +47,7 @@ public class Health : MonoBehaviour
 
     public void Die(Pawn source)
     {
-        Destroy(gameObject);
+        Destroy(gameObject.GetComponent<Controller>());
+        Destroy(gameObject);        
     }
 }
