@@ -41,26 +41,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 4491866184519907591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 233909821f6dac24780a4eaae2dae8fd, type: 3}
+  m_Script: {fileID: 11500000, guid: 01958f8501bdad64ebd571d19ba38c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 0}
   currentState: 0
   target: {fileID: 0}
-  triggerDistance: 10
+  triggerDistance: 15
   fleeDistance: 3
-  guardWaitTime: 3
+  guardWaitTime: 5
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   waypointStopDistance: 10
-  hearingDistance: 3
+  hearingDistance: 5
   FieldOfView: 30
   firePointTransform: {fileID: 0}
   rayDistance: 25
   IsAvoidingObstacles: 0
-  WaitTime: 12
+  WaitTime: 0
   numberOfWaypoint: 4
-  WaypointRadius: 20
+  WaypointRadius: 50

@@ -123,54 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &11219329
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8561594796635296622, guid: ca8295e0c33570b449f20af3bb917dfe, type: 3}
-  m_PrefabInstance: {fileID: 965806579963907588}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 11219331}
-  - component: {fileID: 11219330}
-  m_Layer: 0
-  m_Name: PickupSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &11219330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 522277442323988475, guid: ca8295e0c33570b449f20af3bb917dfe, type: 3}
-  m_PrefabInstance: {fileID: 965806579963907588}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11219329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1f7653121d00744ca5f0bb789ca79fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupPrefabs:
-  - {fileID: 5490246066614372578, guid: 8523bccfa0df91649855c4a4a96eacef, type: 3}
-  - {fileID: 7039215371726443592, guid: c147820f4cff7e24bbbdc149c23fd748, type: 3}
-  spawnDelay: 15
---- !u!4 &11219331
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 21302569472514929, guid: ca8295e0c33570b449f20af3bb917dfe, type: 3}
-  m_PrefabInstance: {fileID: 965806579963907588}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11219329}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1955669, y: 1.52, z: -13.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &136078345
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,67 +429,6 @@ TerrainCollider:
   serializedVersion: 2
   m_TerrainData: {fileID: 0}
   m_EnableTreeColliders: 1
---- !u!1 &559239889
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 2457517313238711982, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
-  m_PrefabInstance: {fileID: 7357245436770902341}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 559239891}
-  - component: {fileID: 559239890}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &559239890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4047771590728075573, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
-  m_PrefabInstance: {fileID: 7357245436770902341}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559239889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 925cde2a8b606724487cb2363b4c4e6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfAIEnemies: 4
-  mapSeed: 14
-  isMapOfDay: 0
-  isRandom: 0
-  AIEnemy: {fileID: 864928056514346496, guid: 90e82284741e71c479fc80d3a1871901, type: 3}
-  PlayerControllerPrefab: {fileID: 7353906114118907334, guid: b9680fa23c60ebf478ad3e0dec7c89f5, type: 3}
-  TankPawnPrefab: {fileID: 2675900703322249293, guid: 6dc343b3f87601145a5b2a804b663f4a, type: 3}
-  Camera: {fileID: 580047491}
-  CamAnchor: {fileID: 0}
-  mapGenerator: {fileID: 6956467855894287231, guid: 022cfd0ab626d2c4fa732486452d7443, type: 3}
-  AIControllers:
-  - {fileID: 1067258821371451169, guid: c34fa00b0db1d1b4f8cbe58dca0b130d, type: 3}
-  - {fileID: 4962183662796459120, guid: 2cd6c24d69a386b45a702d91e3f4a743, type: 3}
-  - {fileID: 3858397150231216959, guid: 4e3dd2f1ba8c25d4297932c07d876e47, type: 3}
-  - {fileID: 7269691465310232643, guid: 47c3f8de81145584f8aca98689d06b7a, type: 3}
-  players: []
-  Controllers: []
---- !u!4 &559239891
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 7180880006004167849, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
-  m_PrefabInstance: {fileID: 7357245436770902341}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559239889}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.152205, y: 4.8030653, z: 4.0815053}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &580047489
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,24 +664,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1251170682
+--- !u!1 &1251170682 stripped
 GameObject:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 6778169301478185334, guid: c17ee2333a7bc32439b618678beba54d, type: 3}
   m_PrefabInstance: {fileID: 6090140486535547434}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1557540848}
-  - component: {fileID: 1557540850}
-  - component: {fileID: 1557540849}
-  m_Layer: 0
-  m_Name: AISpawnPoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1496265229
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,38 +700,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1557540848
+--- !u!4 &1557540848 stripped
 Transform:
-  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 3661619165907160849, guid: c17ee2333a7bc32439b618678beba54d, type: 3}
   m_PrefabInstance: {fileID: 6090140486535547434}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251170682}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.97, y: 2, z: -15.52}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1557540849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251170682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030cdeffe8c168642b52e32afc1d8425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1557540850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 8003456614382675427, guid: c17ee2333a7bc32439b618678beba54d, type: 3}
-  m_PrefabInstance: {fileID: 6090140486535547434}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251170682}
   m_Enabled: 1
@@ -1124,6 +980,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 580047491}
     - target: {fileID: 4047771590728075573, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
+      propertyPath: AIEnemy
+      value: 
+      objectReference: {fileID: 753805638182255727, guid: 35cc9be8ebaa17d418387fdb4cec6e3c, type: 3}
+    - target: {fileID: 4047771590728075573, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
       propertyPath: mapSeed
       value: 14
       objectReference: {fileID: 0}
@@ -1139,6 +999,10 @@ PrefabInstance:
       propertyPath: mapGenerator
       value: 
       objectReference: {fileID: 6956467855894287231, guid: 022cfd0ab626d2c4fa732486452d7443, type: 3}
+    - target: {fileID: 4047771590728075573, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
+      propertyPath: TankPawnPrefab
+      value: 
+      objectReference: {fileID: 5333957085146517115, guid: 52c8098b6f08d854e807758dac718d9f, type: 3}
     - target: {fileID: 4047771590728075573, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
       propertyPath: tankPawnSpawner
       value: 
@@ -1163,6 +1027,10 @@ PrefabInstance:
       propertyPath: AISpawns.Array.data[3]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4047771590728075573, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
+      propertyPath: PlayerControllerPrefab
+      value: 
+      objectReference: {fileID: 7353906114118907334, guid: 436381157adffe94989d3eb07e4986c3, type: 3}
     - target: {fileID: 4047771590728075573, guid: 57a3ada5e7e37b74c8cb03085a06b10f, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 

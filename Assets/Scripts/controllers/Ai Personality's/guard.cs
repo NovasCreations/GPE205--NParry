@@ -5,27 +5,26 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Attacker : AIController
+public class Guard : AIController
 {
     public float WaitTime;
-    public float numberOfWaypoint;
-    public float WaypointRadius;
-
+    public float waypointRadius;
     private float guardTime;
     private float timeToWait;
 
-    private float distanceToTarget;
-    private Vector3 spawnPosition;
-    private Transform spawnTransform;
 
+    public int numberOfWayPoint = 4;
+
+    private float distanceToTarget;
+
+    private Vector3 spawnPosition;
     // Start is called before the first frame update
     public override void Start()
     {
         timeToWait = Time.time + WaitTime;
         guardTime = Time.time + guardWaitTime;
-        spawnPosition = gameObject.transform.position;
-        spawnTransform = gameObject.transform;
-        waypoints = CreateGuardTransforms(spawnTransform, WaypointRadius, numberOfWaypoint).ToArray();
+        waypoints = CreateGuardTransforms(gameObject.transform, waypointRadius, numberOfWayPoint).ToArray();
+
         base.Start();
 
     }
@@ -92,7 +91,7 @@ public class Attacker : AIController
             case AIState.Patrol:
                 if (CanSee(target) || CanHear(target))
                 {
-                    ChangeState(AIState.Chase);
+                    ChangeState(AIState.Guard);
                 }
                 if (IsAvoidingObstacles)
                 {
@@ -101,7 +100,7 @@ public class Attacker : AIController
                 doPatrolState();
                 break;
             case AIState.Avoid:
-                if (!IsAvoidingObstacles || CanSee(target) || CanHear(target))
+                if (!IsAvoidingObstacles || CanSee(target))
                 {
                     ChangeState(AIState.Chase);
                 }
